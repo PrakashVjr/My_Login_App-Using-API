@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MyApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    
+    xmlns:Pages="clr-namespace:MyApp.Pages"
+    FlyoutBehavior="Flyout"
+    >
+    <ShellContent
+        Title="Login Page"
+        ContentTemplate= "{DataTemplate Pages:HomePage}"
+        Route="HomePage" />
+    <!--Route="HomePage"-->
+    <!--<ShellContent
+        Title="Login Page"
+        ContentTemplate= "{DataTemplate Pages:LoginPage}"
+        Route="LoginPage" />
+        --><!--Route="LoginPage"-->
+    <MenuItem Text="Login">
+  
+    </MenuItem>
+
+    <FlyoutItem Route="HomePage" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Home" ContentTemplate="{DataTemplate Pages:HomePage}"/>
+        <ShellContent Title="Emplyoees" ContentTemplate="{DataTemplate Pages:EmployeeListPage}"/>
+        <ShellContent Title="About" ContentTemplate="{DataTemplate Pages:AboutPage}"/>
+    </FlyoutItem>
+    <MenuItem Text="Logout" ></MenuItem>
+    <Shell.FlyoutHeader>
+        <Grid
+            RowDefinitions="80" ColumnDefinitions="100,*">
+            <Button Grid.Row="0" Grid.Column="0" BackgroundColor="Cyan" BorderColor="Black" CornerRadius="0"
+                ImageSource="person.svg"
+            />
+            <Label Grid.Row="0" Grid.Column="1" Text="Name" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                   BackgroundColor="Grey"
+            />
+        </Grid>
+    </Shell.FlyoutHeader>
+
+</Shell>

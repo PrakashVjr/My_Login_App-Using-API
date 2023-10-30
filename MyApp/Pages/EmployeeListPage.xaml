@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:MyApp.Models"
+             x:Class="MyApp.Pages.EmployeeListPage"
+             Title="EmployeeListPage">
+    
+        <Grid>
+        
+        
+        <ScrollView>
+            <VerticalStackLayout>
+                <Label 
+                    Text="Employee List"
+                    VerticalOptions="Center" 
+                    FontSize="Title"
+                    FontAttributes="Bold"
+                    Padding="20"
+                    HorizontalOptions="Center" 
+                />
+        
+
+
+            <CollectionView ItemsSource="{Binding EmployeeList}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:UserInfo">
+                        
+                            <Frame>
+                        <VerticalStackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <!--Image-->
+                                    <!--<RowDefinition />-->
+                                    
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150"/>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <!--add Image at Top-->
+                                <Label Grid.Row="0" Grid.Column="0" Text="FirstName" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text=":" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="{ Binding FirstName}" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                                <Label Grid.Row="1" Grid.Column="0" Text="Last Name" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text=":" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="1" Grid.Column="2" Text="{ Binding LastName}" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                                <Label Grid.Row="2" Grid.Column="0" Text="Email" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="2" Grid.Column="1" Text=":" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="2" Grid.Column="2" Text="{ Binding Email}" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                                <Label Grid.Row="3" Grid.Column="0" Text="Phone Number" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="3" Grid.Column="1" Text=":" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="3" Grid.Column="2" Text="{ Binding PhoneNumber}" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                                <Label Grid.Row="4" Grid.Column="0" Text="Address" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="4" Grid.Column="1" Text=":" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="4" Grid.Column="2" Text="{ Binding Address}" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                                <Label Grid.Row="5" Grid.Column="0" Text="ZipCode" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="5" Grid.Column="1" Text=":" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="5" Grid.Column="2" Text="{ Binding ZipCode}" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                                <Label Grid.Row="6" Grid.Column="0" Text="Age" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="6" Grid.Column="1" Text=":" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="6" Grid.Column="2" Text="{ Binding Age}" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                                <Label Grid.Row="7" Grid.Column="0" Text="MarriedStatus" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="7" Grid.Column="1" Text=":" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Label Grid.Row="7" Grid.Column="2" Text="{ Binding MarriedStatus}" FontSize="20" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            </Grid>
+                            
+                                <!--<Label Text="{ Binding FirstName}" FontSize="20"/>
+                                <Label Text="{ Binding LastName}" FontSize="20"/>
+                                <Label Text="{ Binding Email}" FontSize="20"/>
+                                <Label Text="{ Binding PhoneNumber}" FontSize="20"/>
+                                <Label Text="{ Binding Address}" FontSize="20"/>
+                                <Label Text="{ Binding ZipCode}" FontSize="20"/>
+                                <Label Text="{ Binding Dob}" FontSize="20"/>
+                                <Label Text="{ Binding Gender}" FontSize="20"/>
+                                <Label Text="{ Binding Age}" FontSize="20"/>
+                                <Label Text="{ Binding MarriedStatus}" FontSize="20"/>-->
+                            
+                        </VerticalStackLayout>
+                        </Frame>
+                        
+                        
+                    </DataTemplate>
+                    
+                    
+
+        </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+        </VerticalStackLayout>
+    </ScrollView>
+        <Button Text="+" VerticalOptions="End"
+                FontSize="30"
+                 HorizontalOptions="End"
+                 Margin="0,0,30,30"
+                 Padding="20"
+                CornerRadius="40"
+                Clicked="Save_Button_cliked"
+               />
+    </Grid>
+
+</ContentPage>

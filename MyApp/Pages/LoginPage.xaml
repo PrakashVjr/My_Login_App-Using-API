@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApp.Pages.LoginPage"
+             Title="LoginPage"
+             Shell.NavBarIsVisible="False">
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Path Stroke="#000" Data="m-0.32626,-264.34807l800.65251,0l0,362.84993c-400.32625,0 -400.32625,138.25248 -800.65251,59.69994l0,-422.54988z" Fill="#7f00ff" Aspect="Fill"/>
+        <Path Stroke="#000" Data="m400.52424,108.76902c14.57505,0 26.39916,-8.77797 26.39916,-19.58777c0,-10.80981 -11.82411,-19.57934 -26.39916,-19.57934c-14.57505,
+              0 -26.39916,-8.77798 -26.39916,-19.58778c0,-10.8098 11.82411,-19.57933 26.39916,-19.57933c29.15009,0 52.80969,17.54751 52.80969,39.16712c0,
+              21.6196 -23.6596,39.16711 -52.80969,39.16711l0,-0.00001zm0,-13.46659c-4.55704,0 -8.2533,-2.74138 -8.2533,-6.12118c0,-3.37981 3.69625,
+              -6.12118 8.2533,-6.12118c4.55705,0 8.25329,2.74137 8.25329,6.12118c0,3.3798 -3.69624,6.12118 -8.25329,6.12118zm0,-39.16712c4.5547,
+              0 8.25329,-2.74312 8.25329,-6.12118c0,-3.37806 -3.69859,-6.12119 -8.25329,-6.12119c-4.5547,0 -8.2533,
+              2.74313 -8.2533,6.12119c0,3.37806 3.6986,6.12118 8.2533,6.12118zm51.6252,13.44165c0,-21.60355 -23.61325,
+              -39.11668 -52.74169,-39.11668c-29.12844,0 -52.7417,17.51313 -52.7417,39.11668c0,21.60355 23.61326,
+              39.11668 52.7417,39.11668c29.12844,0 52.74169,-17.51313 52.74169,-39.11668z" Fill="#fdfcff" Margin="0,0,0,0"/>
+        <StackLayout Margin="0,0,0,0">
+            <Frame BackgroundColor="SkyBlue" HeightRequest="60" WidthRequest="60" CornerRadius="30" Padding="0" Margin="0,50,0,0" HorizontalOptions="Center" >
+                <Image Source="account_circle.svg" Aspect="AspectFill" Margin="0"/>
+            </Frame>
+        </StackLayout>
+
+        <Grid RowSpacing="5" Grid.Row="1" Margin="20,0,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="1" Text="Welcome" HorizontalOptions="Center" FontSize="Title" FontAttributes="Bold" Padding="0" Margin="0" />
+            <Label Grid.Row="2" Text="Sign in To Continue" HorizontalOptions="Center" FontSize="Medium" TextColor="Black"/>
+            
+            <StackLayout Grid.Row="3" Orientation="Vertical" >
+                <Frame BackgroundColor="Transparent" BorderColor="DarkCyan" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="White" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                            <Image Source="account_circle.svg" Aspect="AspectFill" Margin="0"/>
+                        </Frame>
+                        <Entry Text="{Binding UserName}" Placeholder="USerName" TextColor="Black" FontAttributes="Bold" WidthRequest="290" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="0,0,20,0" />
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="Transparent" BorderColor="DarkCyan" Padding="0" Margin="0,15,0,0"  HorizontalOptions="FillAndExpand" CornerRadius="30">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="White" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                            <Image Source="lock.svg" Aspect="AspectFill" Margin="0"/>
+                        </Frame>
+                        <Entry Text="{Binding Password}" Placeholder="Password"  TextColor="Black" FontAttributes="Bold" WidthRequest="290" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="0,0,20,0" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Grid.Row="4" Orientation="Horizontal" Margin="0,10,0,0" Padding="0">
+                <CheckBox IsChecked="False"/>
+                <Label Text="Remember Me" TextColor="DarkGray" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                <Label Text="Forgot Password" TextColor="#1D8348" FontAttributes="Bold" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+            
+            <Button Grid.Row="5" Text="Sign In" BackgroundColor="Green" TextColor="White" FontAttributes="Bold" CornerRadius="30" HeightRequest="50" Margin="0,30,0,0" Command="{Binding LoginCommand}"/>
+            
+            <StackLayout Grid.Row="6" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,50,0,0" Padding="0">
+                <Label Text="New User? | " TextColor="DarkGray" FontSize="Small"/>
+                <Label Text="Sign Up" TextColor="#1D8348" FontAttributes="Bold" FontSize="Small"/>
+            </StackLayout>
+        </Grid>
+        
+    </Grid>
+    
+    
+</ContentPage>

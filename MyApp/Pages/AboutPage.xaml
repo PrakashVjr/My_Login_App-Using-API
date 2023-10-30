@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyApp.Pages.AboutPage"
+             Title="AboutPage"
+             >
+    
+    <ScrollView>
+        <StackLayout>
+
+            <Label 
+                Text="Add Employee"
+                Padding="25"
+                FontAttributes="Bold"
+                FontSize="Title"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+            />
+            <VerticalStackLayout Margin="20" Padding="5" Spacing="15">
+                <Label Text="First Name" />
+                <Frame WidthRequest="360" HeightRequest="39" VerticalOptions="End" HorizontalOptions="Start" >
+                    <Entry Text="{Binding FirstName}" Placeholder="First Name" TextColor="Black" FontAttributes="Bold" WidthRequest="200" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+                </Frame>
+
+
+                <Label Text="Last Name" />
+                <Frame  WidthRequest="360" HeightRequest="39" VerticalOptions="StartAndExpand" HorizontalOptions="Start" >
+                    <Entry Text="{Binding LastName}" Placeholder="Last Name " TextColor="Black" FontAttributes="Bold" WidthRequest="200" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+                </Frame>
+
+
+                <Label Text="Email" />
+                <Frame WidthRequest="360" HeightRequest="39" VerticalOptions="StartAndExpand" HorizontalOptions="Start" >
+                    <Entry Text="{Binding Email}" Placeholder="Email" TextColor="Black" FontAttributes="Bold" WidthRequest="200" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+                </Frame>
+
+
+                <Label  Text="Phone Number" />
+                <Frame WidthRequest="360" HeightRequest="39" VerticalOptions="StartAndExpand" HorizontalOptions="Start" >
+                    <Entry Text="{Binding PhoneNumber}" Placeholder="Phone Number" TextColor="Black" FontAttributes="Bold" WidthRequest="200" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+                </Frame>
+
+
+                <Label Text="Address" />
+                <Frame WidthRequest="360" HeightRequest="39" VerticalOptions="StartAndExpand" HorizontalOptions="Start" >
+                    <Entry Text="{Binding Address}" Placeholder="Address" TextColor="Black" FontAttributes="Bold" WidthRequest="200" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+                </Frame>
+
+
+                <Label Text="ZipCode" />
+                <Frame  WidthRequest="360" HeightRequest="39" VerticalOptions="StartAndExpand" HorizontalOptions="Start" >
+                    <Entry Text="{Binding ZipCode}" Placeholder="ZipCode" TextColor="Black" FontAttributes="Bold" WidthRequest="200" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"/>
+                </Frame>
+
+                <Label  Text="Dob" />
+                <DatePicker  WidthRequest="360" HeightRequest="50" HorizontalOptions="Start" >
+
+                </DatePicker>
+
+
+                <Label  Text="Age" />
+                <Label Text="{Binding Age}"/>
+                <Slider Minimum="0" Maximum="100" HeightRequest="50" WidthRequest="360" HorizontalOptions="Start"/>
+
+
+                <Label  Text="Gender" />
+                <RadioButton Content="Male"/>
+                <RadioButton Content="Female"/>
+
+
+                <Label Text="MarriedStatus"/>
+                <Grid ColumnSpacing="5" RowSpacing="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition />
+
+                    </Grid.ColumnDefinitions>
+
+                    <Switch Grid.Row="0" Grid.Column="0" IsToggled="False" HorizontalOptions="Start"/>
+                    <Label  Grid.Row="0" Grid.Column="1" Text="Married" VerticalOptions="Center"/>
+                </Grid>
+
+
+
+                <Label  Text="Files" />
+                <Button Text="Select File" HorizontalOptions="Start" FontSize="Micro" TextColor="GhostWhite" BackgroundColor="LightSlateGrey" CornerRadius="0" HeightRequest="40" WidthRequest="360"/>
+
+
+                <Button Text="Save" WidthRequest="120" HeightRequest="60" BackgroundColor="Green" TextColor="White" FontAttributes="Bold" CornerRadius="40"  Padding="10" Margin="0,15,0,0" />
+            </VerticalStackLayout>
+        </StackLayout>
+    </ScrollView>
+   
+
+</ContentPage>
+
+<!--Nested Grid-->
+<!--<Label Grid.Row="8" Grid.Column="0" Text="Gender" />
+                    <Grid Grid.Row="8" Grid.Column="1" RowSpacing="5" WidthRequest="200">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <RadioButton Grid.Row="0" Grid.Column="0"  Content="Male"/>
+                        <RadioButton Grid.Row="1" Grid.Column="1"  Content="Female"/>
+                    </Grid>
+
+                    <Label Grid.Row="9" Grid.Column="0" Text="MarriedStatus"/>
+                    <Grid Grid.Row="9" Grid.Column="1" WidthRequest="200">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Grid.Row="0" Grid.Column="0" WidthRequest="20" VerticalOptions="Start">
+                        </CheckBox>
+                        <Label Grid.Row="9" Grid.Column="1" Text="Yes" Padding="0" HorizontalOptions="Start"/>
+                    </Grid>-->
