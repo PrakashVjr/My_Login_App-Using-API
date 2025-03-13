@@ -21,7 +21,9 @@ namespace MyApp.ViewModels
         {
             var UserName = "prakash";
             var Password = "Demo@1234";
-            var Email = "Prakash@yopmail.com"
+            var Email = "Prakash@yopmail.com";
+
+            var ApiKey = "AIzaSyBGCs1b8NQfNn3N1Aomk2iSsW17zFCUw1M";
         }
 
         [ICommand]
