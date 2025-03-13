@@ -17,6 +17,13 @@ namespace MyApp.ViewModels
         private string _password;
         readonly ILoginRepository loginRepository = new LoginService();
 
+        public LoginPageViewModel()
+        {
+            var UserName = "prakash";
+            var Password = "Demo@1234";
+            var Email = "Prakash@yopmail.com"
+        }
+
         [ICommand]
         public async void Login()
         { 
