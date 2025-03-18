@@ -1,0 +1,21 @@
+name: Example workflow for dotNET using Snyk
+on: push
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/dotnet@master
+        continue-on-error: true # To make sure that SARIF upload gets called
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          command: code test
+          args: --sarif-file-output=snyk.sarif
+      - name: Print the Snyk Sarif file
+        run : cat snyk.sarif
+      - name : Totalv Security issues
+        run :  |
+                lenth=$(cat snyk.sarif | jq '.run[0].results | length' )
+                echo "RESULTS_LENGTH=$RESULTS_LENGTH" >> $GITHUB_ENV
