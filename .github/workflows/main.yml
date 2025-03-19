@@ -11,11 +11,6 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          command: monitor
-          args: --sarif-file-output=snyk.sarif
-      - name: Print the Snyk Sarif file
-        run : cat snyk.sarif
-      - name : Totalv Security issues
-        run :  |
-                lenth=$(cat snyk.sarif | jq '.run[0].results | length' )
-                echo "RESULTS_LENGTH=$RESULTS_LENGTH" >> $GITHUB_ENV
+          command: code test
+          args: --severity-threshold=high
+        
