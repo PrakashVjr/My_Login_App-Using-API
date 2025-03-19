@@ -104,6 +104,24 @@ namespace MyApp.ViewModels
         {
             await DisplayAlert("Debug Info", connectionString, "OK");
         }
+
+        // Critical: Hardcoded Cryptographic Key
+        private string EncryptData(string data)
+        {
+            string hardcodedKey = "1234567890123456";
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = Encoding.UTF8.GetBytes(hardcodedKey);
+                aes.IV = new byte[16];
+                using (MemoryStream ms = new MemoryStream())
+                using (CryptoStream cs = new CryptoStream(ms, aes.CreateEncryptor(), CryptoStreamMode.Write))
+                using (StreamWriter sw = new StreamWriter(cs))
+                {
+                    sw.Write(data);
+                }
+                return Convert.ToBase64String(ms.ToArray());
+            }
+        }
         
     }
 }
